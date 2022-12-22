@@ -1,0 +1,30 @@
+#caeser ciper encrypt forward
+
+alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V','W', 'X', 'Y', 'Z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V','W', 'X', 'Y', 'Z']
+dir = input('encrypt or decrypt')
+n = int(input('no. of shifts:'))
+msg = input('enter a msg:').upper()
+def encrypt(a,b):
+  empty = ''
+  for i in a:
+    pos = alphabets.index(i)
+    new_pos = pos + b
+    new = alphabets[new_pos]
+    empty += new
+  print(empty) 
+
+#caeser ciper decrypt backward
+def decrypt(a,b):
+  empty = ''
+  for i in a:
+    pos = alphabets.index(i)
+    new_pos = pos - b
+    new = alphabets[new_pos]
+    empty += new
+  print(empty)   
+if dir == 'encrypt':
+  encrypt(a=msg,b=n)
+else:
+  decrypt(a=msg,b=n)
+
+
